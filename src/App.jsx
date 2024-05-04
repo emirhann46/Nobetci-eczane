@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import List from "./pages/List";
 import { useCityDetail } from "./context/CityContext";
 import { CgArrowsExchange } from "react-icons/cg";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import Map from "./pages/Map";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
 
   const toggleIcerik = () => {
     setCity("");
-    setPage(page === "map" ? "list" : "map"); // Corrected the logic
+    setPage(page === "map" ? "list" : "map");
   };
 
   return (
@@ -26,8 +26,7 @@ function App() {
           <CgArrowsExchange color="red" />
         </button>
       </div>
-      {page === "list" && <List />}
-      {page === "map" && <Map />}
+      {page === "list" ? <List /> : <Map />}
     </>
   );
 }
